@@ -8,17 +8,18 @@ int main(int argc, char const *argv[]) {
 	sprintf(palavrasecreta, "MELANCIA");
 
 	int acertou = 0;
-	int enforcou = 1;
+	int enforcou = 0;
 
 	do {
-		char chute;
-		scanf("%c", &chute);
 
-	    for (int i = 0; i < strlen(palavrasecreta); ++i) {
-	    	if (palavrasecreta [i] == chute) {
-	    		printf("A posicao %d tem essa letra!\n", i);
-	    	}
-		} 
+		for (int i = 0; i < strlen(palavrasecreta); ++i) {
+			printf("_ ");
+		}
+		printf("\n");
+		
+		char chute;
+		scanf(" %c", &chute);
+
 	} while(!acertou && !enforcou);
 	
 	return 0;
