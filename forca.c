@@ -10,15 +10,35 @@ int main(int argc, char const *argv[]) {
 	int acertou = 0;
 	int enforcou = 0;
 
+	char chutes[26];
+	int tentativas = 0;
+
 	do {
 
 		for (int i = 0; i < strlen(palavrasecreta); ++i) {
-			printf("_ ");
+			int achou = 0;
+
+			for (int j = 0; j < tentativas; ++j) {
+				if (chutes[j] == palavrasecreta[i])	{
+					achou = 1;
+					break;
+				}
+			}
+
+			if (achou) {
+				printf("%c", palavrasecreta[i]);
+			} else {
+				printf("_ ");
+			}
 		}
 		printf("\n");
-		
+
 		char chute;
+		printf("Qual seu chute?\n");
 		scanf(" %c", &chute);
+
+		chutes[tentativas] = chute;
+		tentativas++;
 
 	} while(!acertou && !enforcou);
 	
