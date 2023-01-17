@@ -2,6 +2,13 @@
 #include <string.h>
 #include <ctype.h>
 
+void abertura(){
+	printf("*********************\n");
+	printf("*   Jogo da Forca   *\n");
+	printf("*********************\n");
+}
+
+
 int main(int argc, char const *argv[]) {
 
 	char palavrasecreta[20];
@@ -13,6 +20,8 @@ int main(int argc, char const *argv[]) {
 
 	char chutes[26];
 	int tentativas = 0;
+
+	abertura();
 
 	do {
 
