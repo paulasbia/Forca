@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 int main(int argc, char const *argv[]) {
 
@@ -19,7 +20,7 @@ int main(int argc, char const *argv[]) {
 			int achou = 0;
 
 			for (int j = 0; j < tentativas; ++j) {
-				if (chutes[j] == palavrasecreta[i])	{
+				if (toupper(chutes[j]) == palavrasecreta[i])	{
 					achou = 1;
 					break;
 				}
